@@ -8,8 +8,8 @@ import star_2 from "../../public/images/star.png";
 
 function Timeline() {
   return (
-    <div className="wrapper">
-      <section className="block lg:text-center relative">
+    <div id="timeline" className="wrapper">
+      <section className="block lg:text-center relative ">
         <Image
           className="absolute_translate  left-[10%] top-[5%] bg_spice w-3  "
           src={star_3}

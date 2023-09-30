@@ -33,7 +33,7 @@ function Overview03() {
         <div>
           <h2 style={{ fontFamily: "__clashdisplay_10f617" }}>
             <span> Judging Criteria</span>
-            <span className="block text-[--secondary-color]">
+            <span className="block text-[--secondary-color] secondary_text_stroke">
               Key attributes
             </span>
           </h2>

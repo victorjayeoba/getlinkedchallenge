@@ -3,9 +3,10 @@ import Image from "next/image";
 import idea from "../../public/images/The big idea.png";
 import arrow from "../../public/images/arrow.png";
 import star_3 from "../../public/images/star pu.png";
+
 function Overview01() {
   return (
-    <div className="wrapper">
+    <div id="overview" className="wrapper">
       <section className="compulsory_flex_row">
         <Image
           src={star_3}
@@ -19,7 +20,7 @@ function Overview01() {
         <div className="basis-1/2">
           <h2 style={{ fontFamily: "__clashdisplay_10f617" }}>
             <span>Introduction to getlinked</span>
-            <span className="block text-[--secondary-color]">
+            <span className="block text-[--secondary-color] secondary_text_stroke">
               tech Hackathon 1.00
             </span>
           </h2>

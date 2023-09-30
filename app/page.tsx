@@ -28,4 +28,4 @@ export default function Home() {
     </>
   );
 }
-// git push -f origin main  https://github.com/victorjayeoba/getlinked.git
+// https://github.com/victorjayeoba/getlinkedchallenge.git

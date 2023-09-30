@@ -32,7 +32,9 @@ function Overview02() {
         <div>
           <h2 style={{ fontFamily: "__clashdisplay_10f617" }}>
             <span> Rules and</span>
-            <span className="block text-[--secondary-color]">Guidelines</span>
+            <span className="block text-[--secondary-color] secondary_text_stroke">
+              Guidelines
+            </span>
           </h2>
           <p>
             Our tech hackathon is a melting pot of visionaries, and its purpose

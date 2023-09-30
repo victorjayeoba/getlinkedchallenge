@@ -60,13 +60,13 @@ function Footer() {
             <h3>Useful Links</h3>
             <ul>
               <li>
-                <a href="">Overview</a>
+                <a href="#overview">Overview</a>
               </li>
               <li>
-                <a href="">Timeline</a>
+                <a href="#timeline">Timeline</a>
               </li>
               <li>
-                <a href="">FAQs</a>
+                <a href="#faqs">FAQs</a>
               </li>
               <li>
                 <a href="">Register</a>
@@ -127,7 +127,8 @@ function Footer() {
                       fill="#F8F8F8"
                     />
                   </svg>
-                  <p>+234 6707653444</p>
+
+                  <a href="tel:+2346707653444">234-670-765-3444</a>
                 </li>
                 <li className="flex items-start  leading-6  gap-6  ">
                   <svg

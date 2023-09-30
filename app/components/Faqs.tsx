@@ -11,7 +11,7 @@ import star_3 from "../../public/images/star pu.png";
 function Faqs() {
   console.log(faqs);
   return (
-    <div className="wrapper">
+    <div id="faqs" className="wrapper">
       <section className="compulsory_flex_row">
         <Image
           src={star_3}
@@ -21,7 +21,9 @@ function Faqs() {
         <div>
           <h2 style={{ fontFamily: "__clashdisplay_10f617" }}>
             <span> Frequently Ask</span>
-            <span className="block text-[--secondary-color]">Question</span>
+            <span className="block text-[--secondary-color] secondary_text_stroke">
+              Question
+            </span>
           </h2>
           <p>
             We got answers to the questions that you might want to ask about

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import bulb from "../../public/images/Creative 1.png";
 import blast from "../../public/images/1f4a5 (1).png";
 import chain from "../../public/images/chain-9365116-7621444 (1).png";
@@ -9,9 +10,17 @@ import man_touch from "../../public/images/Image 1.png";
 import purple_flare from "../../public/images/Purple-Lens-Flare-PNG.png";
 import star_1 from "../../public/images/star (1).png";
 import star_2 from "../../public/images/star.png";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Image from "next/image";
 function Hero() {
+  useEffect(() => {
+    gsap.from("testing", {
+      opacity: 0,
+    });
+  }, []);
+  /*   useEffect (() => { var updateTime = setInterval (() => { var now = new Date ().getTime (); var difference = countDownDate - now; var newDays = Math.floor (difference / (1000 * 60 * 60 * 24)); var newHours = Math.floor ((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); var newMinutes = Math.floor ((difference % (1000 * 60 * 60)) / (1000 * 60)); var newSeconds = Math.floor ((difference % (1000 * 60)) / 1000); setDays (newDays); setHours (newHours); setMinutes (newMinutes); setSeconds (newSeconds); if (difference <= 0) { clearInterval (updateTime); setMessage ("The Launch Has Started"); setDays (0); setHours (0); setMinutes (0); setSeconds (0); } }) return () => { clearInterval (updateTime); } }, [time]); */
   return (
     <main className=" pt-20 pr-0 relative ">
       <Image
@@ -59,12 +68,12 @@ function Hero() {
         </div>
       </h2>
 
-      <aside className="lg:flex lg:mx-auto  relative lg:items-start lg:gap-4  lg:justify-center">
+      <aside className="lg:flex lg:mx-auto py-0 my-0 relative lg:items-center lg:gap-4  lg:justify-center">
         <div className="lg:pt-6">
           <div>
             <div className=" lg:flex flex-1 lg:flex-col  pt-12">
               <h1
-                className="inline txt_stroke  text-4xl lg:text-6xl"
+                className="testing  inline txt_stroke  text-4xl lg:text-6xl"
                 style={{ fontFamily: "__clashdisplay_10f617" }}
               >
                 <span
@@ -115,7 +124,7 @@ function Hero() {
               </button>
             </div>
           </div>
-          <div className="lg:mt-8">
+          <div className="lg:mt-2">
             <Image
               className="mx-auto inline-block "
               src={counter}
@@ -123,7 +132,7 @@ function Hero() {
             />
           </div>
         </div>
-        <div className=" flex-1  flex justify-end   items-end  relative ">
+        <div className=" flex-1 basis-1/2 h-full flex justify-end items-end  relative ">
           <Image
             className="absolute_translate w-full h-full left-[75%] top-[50%] lg:top-[40%] lg:left-[60%]"
             src={purple_flare}
