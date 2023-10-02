@@ -4,6 +4,7 @@ import menuBar from "../../public/images/Vector (1).png";
 import times from "../../public/images/Vector.png";
 import Image from "next/image";
 import { FaTimes } from "react-icons/fa";
+import Link from "next/link";
 function Navbar() {
   const [show, setShow] = useState(false);
   function handleNav() {
@@ -35,7 +36,7 @@ function Navbar() {
               <a href="#faqs">FAQs</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <Link href="../pages/contact">Contact</Link>
             </li>
           </ul>
           <div>
@@ -53,16 +54,16 @@ function Navbar() {
             <div className="px-12 pt-24 ">
               <ul className="grid gap-3 text-xl text-start  ">
                 <li>
-                  <a href="">Timeline</a>
+                  <a href="#timelines">Timeline</a>
                 </li>
                 <li>
-                  <a href="">Overview</a>
+                  <a href="#overview">Overview</a>
                 </li>
                 <li>
-                  <a href="">FAQs</a>
+                  <a href="#faqs">FAQs</a>
                 </li>
                 <li>
-                  <a href="">Contact</a>
+                  <Link href="../pages/contact">Contact/</Link>
                 </li>
               </ul>
               <div className="text-start mt-12">

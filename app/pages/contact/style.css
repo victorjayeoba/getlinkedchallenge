@@ -1,0 +1,50 @@
+input,
+textarea {
+  display: block;
+
+  @apply bg-transparent border-[1px] block rounded-md p-6 text-xl;
+}
+input {
+  @apply h-16;
+}
+form {
+  @apply flex items-center flex-col  gap-8 mt-10 mx-0;
+}
+form div {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+}
+form div * {
+  flex-basis: 1005;
+}
+label {
+  display: block;
+  position: absolute;
+  transform: translateY(-50%);
+  left: 5%;
+  top: 50%;
+
+  font-size: 1.4rem;
+  transition: transform 2s ease-in !important;
+  pointer-events: none;
+}
+.text_area label {
+  top: 15%;
+}
+
+form div:has(input:focus) label,
+form div:has(textarea:focus) label {
+  top: 0;
+  left: 5%;
+  background-color: var(--primary-color);
+  padding: 0.2rem 0.4rem;
+
+  background-color: var(--primary-color);
+}
+input {
+  @apply focus:outline-2 outline-purple-900 focus:border-none;
+}
