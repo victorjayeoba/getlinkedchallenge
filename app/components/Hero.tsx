@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import bulb from "../../public/images/Creative 1.png";
 import blast from "../../public/images/1f4a5 (1).png";
 import chain from "../../public/images/chain-9365116-7621444 (1).png";
@@ -14,13 +14,105 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Image from "next/image";
+import { Power4 } from "gsap/dist/gsap";
+import { Bounce } from "gsap/all";
 function Hero() {
-  useEffect(() => {
-    gsap.from("testing", {
-      opacity: 0,
-    });
+  const useIsomorphicLayoutEffect =
+    typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+  useIsomorphicLayoutEffect(() => {
+    let tl = gsap.timeline();
+    tl.to(".scale_up", {
+      scale: 1,
+
+      duration: 0.8,
+      ease: Power4.easeInOut,
+      stagger: 0.35,
+      opacity: 1,
+    })
+      .to(".fade_in", {
+        opacity: 1,
+        y: 0,
+        stagger: 0.12,
+        ease: "power2.inOut",
+      })
+      .to(".rotate_360", {
+        rotate: "-360deg",
+        ease: Power4.easeIn,
+        repeat: -1,
+        scale: 1.2,
+        duration: 200,
+        reversed: true,
+      });
   }, []);
-  /*   useEffect (() => { var updateTime = setInterval (() => { var now = new Date ().getTime (); var difference = countDownDate - now; var newDays = Math.floor (difference / (1000 * 60 * 60 * 24)); var newHours = Math.floor ((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); var newMinutes = Math.floor ((difference % (1000 * 60 * 60)) / (1000 * 60)); var newSeconds = Math.floor ((difference % (1000 * 60)) / 1000); setDays (newDays); setHours (newHours); setMinutes (newMinutes); setSeconds (newSeconds); if (difference <= 0) { clearInterval (updateTime); setMessage ("The Launch Has Started"); setDays (0); setHours (0); setMinutes (0); setSeconds (0); } }) return () => { clearInterval (updateTime); } }, [time]); */
+
+  /*   let tl = gsap.timeline()
+  tl.from('.head_txt', {
+    opacity: 0,
+    ease: "power2.inOut",
+    y: 20,
+
+}).to('.typingQoute', {
+    duration: 3,
+    text: word,
+}).from(".header_timeline_1", {
+    opacity: 0,
+    y: 20,
+    stagger: .2,
+}) */
+  /*   useIsomorphicLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.to(".testing", {
+        scale: 0.8,
+        duration: 0.8,
+        ease: Power4.easeInOut,
+      });
+    });
+
+    return () => ctx.revert;
+
+  }, []); */
+
+  /*   const countDownDate = 169412;
+  const [day, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+  function setMessage(e: string) {
+    alert(e);
+  }
+  var time = countDownDate; */
+  /*   useEffect(() => {
+    var updateTime = setInterval(() => {
+      var now = new Date().getTime();
+      var difference = countDownDate - now;
+      var newDays = Math.floor(difference / (1000 * 60 * 60 * 24));
+      var newHours = Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var newMinutes = Math.floor(
+        (difference % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      var newSeconds = Math.floor((difference % (1000 * 60)) / 1000);
+      setDays(newDays);
+      setHours(newHours);
+      setMinutes(newMinutes);
+      setSeconds(newSeconds);
+      if (difference <= 0) {
+        clearInterval(updateTime);
+        setMessage("The Launch Has Started");
+        setDays(0);
+        setHours(0);
+        setMinutes(0);
+        setSeconds(0);
+      }
+    });
+
+    return () => {
+      clearInterval(updateTime);
+    };
+  }, [time]); */
+
   return (
     <main className=" pt-20 pr-0 relative ">
       <Image
@@ -83,9 +175,9 @@ function Hero() {
                 >
                   <span>getlinked Tech</span>
                   <Image
-                    className=" inline-block absolute_bulb max-lg:w-8"
+                    className=" scale_up absolute_bulb max-lg:w-8"
                     src={bulb}
-                    alt="counter"
+                    alt="bulb"
                   />
                 </span>{" "}
                 <br />
@@ -94,14 +186,14 @@ function Hero() {
                   <span className="text-[--secondary-color]"> 1.0</span>
                   <div className="inline-flex items-center lg:-mt-3">
                     <Image
-                      className="w-8 lg:w-[4rem] aspect-square  inline-block"
+                      className="scale_up w-8 lg:w-[4rem] aspect-square  inline-block"
                       src={chain}
                       alt={"chain"}
                     />
                     <Image
-                      className="w-8 h-full lg:w-[3.5rem] lg:h-[3.5rem]  inline-block "
+                      className=" scale_up w-8 h-full lg:w-[3.5rem] lg:h-[3.5rem]  inline-block "
                       src={blast}
-                      alt={"chain"}
+                      alt={"blast"}
                     />
                   </div>
                 </span>
@@ -109,7 +201,7 @@ function Hero() {
               {/*  <Image className=" inline-block" src={bulb} alt={"chain"} /> */}
             </div>
             <div>
-              <p className=" font-extralight  leading-6">
+              <p className="fade_in  font-extralight  leading-6">
                 <span>Participate in getlinked tech Hackathon </span>
                 <br className="lg:hidden" />
                 <span>
@@ -118,7 +210,7 @@ function Hero() {
                 </span>
               </p>
             </div>
-            <div className=" my-5 lg:mt-8">
+            <div className="fade_in my-5 lg:mt-8">
               <button className="p_gradient py-3 px-14 rounded-md  ">
                 Register
               </button>
@@ -126,32 +218,32 @@ function Hero() {
           </div>
           <div className="lg:mt-2">
             <Image
-              className="mx-auto inline-block "
+              className="fade_in mx-auto inline-block "
               src={counter}
               alt="counter"
             />
           </div>
         </div>
-        <div className=" flex-1 basis-1/2 h-full flex justify-end items-end  relative ">
+        <div className="  flex-1 basis-1/2 h-full flex justify-end items-end  relative ">
           <Image
             className="absolute_translate w-full h-full left-[75%] top-[50%] lg:top-[40%] lg:left-[60%]"
             src={purple_flare}
             alt={"purple_flare"}
           />
           <Image
-            className="absolute_translate w-full h-full left-[65%] top-[50%] "
+            className=" absolute_translate w-full h-full left-[65%] top-[50%] "
             src={metrix}
             alt={"metrix"}
           />
 
-          <div className="relative pt-3 w-full  lg:p-0  ">
+          <div className="  relative pt-3 w-full  lg:p-0  ">
             <Image
               src={man}
               alt="counter"
-              className="w-full mx-auto inline-block grayscale   object-contain"
+              className="w-full  scale_up  origin-bottom  mx-auto inline-block grayscale   object-contain"
             />
             <Image
-              className="absolute_hero_image"
+              className="scale_up rotate_360 origin-center inline-block absolute_hero_image"
               src={man_touch}
               alt="counter"
             />
