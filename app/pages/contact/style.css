@@ -27,10 +27,10 @@ label {
   transform: translateY(-50%);
   left: 5%;
   top: 50%;
-
-  font-size: 1.4rem;
+  font-size: 1rem;
   transition: transform 2s ease-in !important;
   pointer-events: none;
+  opacity: 0.6;
 }
 .text_area label {
   top: 15%;
@@ -40,10 +40,10 @@ form div:has(input:focus) label,
 form div:has(textarea:focus) label {
   top: 0;
   left: 5%;
-  background-color: var(--primary-color);
   padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
 
-  background-color: var(--primary-color);
+  @apply lg:bg-none backdrop-blur-xl opacity-100;
 }
 input {
   @apply focus:outline-2 outline-purple-900 focus:border-none;

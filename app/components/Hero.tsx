@@ -25,7 +25,7 @@ function Hero() {
     tl.to(".scale_up", {
       scale: 1,
 
-      duration: 0.8,
+      duration: 0.2,
       ease: Power4.easeInOut,
       stagger: 0.35,
       opacity: 1,
@@ -40,7 +40,7 @@ function Hero() {
         rotate: "-360deg",
         ease: Power4.easeIn,
         repeat: -1,
-        scale: 1.2,
+        scale: 1.1,
         duration: 200,
         reversed: true,
       });

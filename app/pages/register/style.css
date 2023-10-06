@@ -1,0 +1,40 @@
+input,
+textarea,
+select {
+  display: block;
+
+  @apply bg-transparent border-[1px] block rounded-md p-3 text-lg  w-full;
+}
+input {
+  @apply h-[3rem];
+}
+form {
+  @apply flex flex-col  gap-8 mt-10 mx-0;
+}
+
+label {
+  display: block;
+
+  left: 5%;
+  top: 50%;
+  font-size: 1.1rem;
+  transition: transform 2s ease-in !important;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5em;
+  font-weight: 500;
+  text-align: start;
+}
+
+input {
+  @apply focus:outline-2 outline-purple-900 focus:border-none;
+}
+select,
+option {
+  background-color: transparent;
+  display: block;
+  font-size: 1rem;
+  @apply px-3 py-3 border-[1px];
+}
+option {
+  @apply text-black;
+}

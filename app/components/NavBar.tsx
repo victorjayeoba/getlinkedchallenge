@@ -13,13 +13,15 @@ function Navbar() {
   return (
     <nav className="pt-7 px-12 py-4 border-b-[1px] fixed_nav backdrop-blur-md bg-[#150e2894] border-b-gray-500    lg:py-1 lg:pt-4 z-50 ">
       <div className="flex justify-between items-center  lg:max-w-[1210px]  mx-auto ">
-        <h1
-          className="text-base"
-          style={{ fontFamily: "__clashdisplay_10f617" }}
-        >
-          <span>get</span>
-          <span className="text-[--secondary-color]">linked</span>
-        </h1>
+        <Link href={"/"}>
+          <h1
+            className="text-base"
+            style={{ fontFamily: "__clashdisplay_10f617" }}
+          >
+            <span>get</span>
+            <span className="text-[--secondary-color]">linked</span>
+          </h1>
+        </Link>
 
         <div className="lg:hidden" onClick={handleNav}>
           <Image src={menuBar} alt="menuBar" />
@@ -40,7 +42,9 @@ function Navbar() {
             </li>
           </ul>
           <div>
-            <button className="minor_btn">Register</button>
+            <Link className="minor_btn block" href="../pages/register">
+              Register
+            </Link>
           </div>
         </div>
         {show && (
@@ -63,7 +67,7 @@ function Navbar() {
                   <a href="#faqs">FAQs</a>
                 </li>
                 <li>
-                  <Link href="../pages/contact">Contact/</Link>
+                  <Link href="../pages/contact">Contact</Link>
                 </li>
               </ul>
               <div className="text-start mt-12">
